@@ -40,10 +40,10 @@ class Solution
             {
                 right++;
                 curr_sum+=arr[right];
-				if(curr_sum > s) {
-					curr_sum = curr_sum - arr[left];
-					left++;
-				}	
+				// if(curr_sum > s) {
+				// 	curr_sum = curr_sum - arr[left];
+				// 	left++;
+				// }	
             }
             else if(curr_sum>s)
             {
