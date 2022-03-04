@@ -40,17 +40,13 @@ class Solution
             {
                 right++;
                 curr_sum+=arr[right];
-				// if(curr_sum > s) {
-				// 	curr_sum = curr_sum - arr[left];
-				// 	left++;
-				// }	
             }
             else if(curr_sum>s)
             {
                 curr_sum-=arr[left];
                 left++;
             }
-            else if(curr_sum==s){
+            else{
                 ar.add(left+1);
                 ar.add(right+1);
                 return ar;
