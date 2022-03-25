@@ -1,5 +1,25 @@
 class Solution {
     public int longestConsecutive(int[] nums) {
+        //Optimised Approach, O(n) & space-complexity O(n) using HashSet
+       Set<Integer> hs=new HashSet<>();
+       for(int num:nums){
+           hs.add(num);
+       }
+       int max=Integer.MIN_VALUE;
+       for(int num:hs){
+           if(!hs.contains(num-1))
+           {
+               int currentNum=num;
+               int result=1;
+               while(hs.contains(currentNum+1)){
+                   currentNum+=1;
+                   result+=1;
+               }
+               max=Math.max(max,result);
+           }
+       }
+        return max>0?max:0;
+        /* O(n*log(n))
         if(nums.length==0)
             return 0;
         Arrays.sort(nums);
@@ -16,5 +36,6 @@ class Solution {
             }
         }
         return Math.max(max,result);
+        */
     }
 }
