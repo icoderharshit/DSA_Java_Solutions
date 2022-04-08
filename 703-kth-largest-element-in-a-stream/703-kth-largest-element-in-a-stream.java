@@ -5,10 +5,8 @@ class KthLargest {
         this.k=k;
         heap=new PriorityQueue<>();
         for(int num:nums){
-            heap.offer(num);
+            add(num);
         }
-        while(heap.size()>k)
-            heap.poll();
     }
     
     public int add(int val) {
