@@ -1,5 +1,6 @@
 class Solution {
     public String reverseWords(String s) {
+        /*
         StringBuilder str=new StringBuilder(s);
         int low=0,high;
         for(int i=0;i<s.length();i++){
@@ -23,5 +24,11 @@ class Solution {
                 }
         }
         return str.toString();
+        */
+        String words[] = s.split(" ");
+        StringBuilder res=new StringBuilder();
+        for (String word: words)
+            res.append(new StringBuilder(word).reverse().toString() + " ");
+        return res.toString().trim();
     }
 }
